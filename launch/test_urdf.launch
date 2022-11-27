@@ -1,0 +1,25 @@
+<launch>
+    <arg name="robot_type" default="test_engineer"/>
+    <arg name="load_chassis" default="true"/>
+    <arg name="roller_type" default="simple" doc="simple or realistic"/>
+
+    <param name="robot_description"
+           command="$(find xacro)/xacro $(find rc_description)/urdf/test_engineer/test_engineer.urdf.xacro"/>
+
+    <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find rm_gazebo)/worlds/empty.world"/>
+    </include>
+
+    <!-- push robot_description to factory and spawn robot in gazebo -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" clear_params="true"
+          args="-x -0.6 -y -0.6 -z 0.3 -param robot_description -urdf -model $(arg robot_type)" output="screen"/>
+
+    <node
+            name="spawn_model"
+            pkg="gazebo_ros"
+            type="spawn_model"
+            args="-file $(find tt)/urdf/tt.urdf -urdf -model tt"
+            output="screen"/>
+
+</launch>
