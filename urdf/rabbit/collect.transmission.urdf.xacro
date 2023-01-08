@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="collect.transmission">
+
+    <xacro:macro name="collection_transmission" params="simulation">
+    <!-- transmission -->
+        <transmission name="lun">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="lun">
+                <mechanicalReduction>19.2032</mechanicalReduction>
+            </actuator>
+            <joint name="lun">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <offset>0</offset>
+            </joint>
+        </transmission>
+        <!-- <transmission name="gan1">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="gan1">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="gan1">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <offset>0</offset>
+            </joint>
+        </transmission>
+    </xacro:macro>     -->
+    
+</robot>

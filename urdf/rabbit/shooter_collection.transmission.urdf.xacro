@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="shooter_collect">
+
+    <xacro:macro name="shooter_collect_transmission" params="simulation">
+    <!-- transmission -->
+        <transmission name="trans_motor">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="trans_motor">
+                <mechanicalReduction>19.2032</mechanicalReduction>
+            </actuator>
+            <joint name="trans_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <offset>0</offset>
+            </joint>
+        </transmission>
+    </xacro:macro>    
+    
+</robot>

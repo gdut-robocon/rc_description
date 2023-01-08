@@ -1,0 +1,454 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="shooter">  
+      <link
+      name="Shooter-Base">
+      <inertial>
+        <origin
+          xyz="0.0950743412858023 -0.0130084344437392 0.0120977909270802" rpy="0 0 0" />
+        <mass value="0.648538493055793" />
+        <inertia
+          ixx="0.0043375306855448"
+          ixy="0.000190482980622144"
+          ixz="0.000136626324396723"
+          iyy="0.0021990496723641"
+          iyz="-1.18954235631185E-05"
+          izz="0.00651681382851503" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/Shooter-Base.stl" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.847058823529412 0.847058823529412 0.847058823529412 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/Shooter-Base.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <!-- <link
+      name="Chilun">
+      <inertial>
+        <origin
+          xyz="-1.33288504122753E-08 -2.8472474378205E-09 0.0213242609091736"
+          rpy="0 0 0" />
+        <mass
+          value="0.00641013788011703" />
+        <inertia
+          ixx="4.616114719543E-07"
+          ixy="-2.28910255492943E-14"
+          ixz="6.20033885094979E-13"
+          iyy="4.6161180321724E-07"
+          iyz="4.63253191149419E-14"
+          izz="5.18364306163533E-07" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/Chilun.stl" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/Chilun.stl" />
+        </geometry>
+      </collision>
+    </link> -->
+    
+    <link
+      name="FuYang">
+      <inertial>
+        <origin
+          xyz="-7.4397178279062E-09 5.52430538519333E-05 -0.0411507647626906"
+          rpy="0 0 0" />
+        <mass
+          value="0.0508012365423532" />
+        <inertia
+          ixx="5.8287498312029E-05"
+          ixy="2.25028435483426E-21"
+          ixz="-7.49782321163413E-12"
+          iyy="5.82875167520687E-05"
+          iyz="2.20075372477063E-19"
+          izz="1.17090379724637E-05" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/FuYang.stl" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="1 1 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/FuYang.stl" />
+        </geometry>
+      </collision>
+    </link>
+    
+    <link
+      name="DaFuYang">
+      <inertial>
+        <origin
+          xyz="-0.0361313482847105 -0.0269805695534879 0.042644241684813"
+          rpy="0 0 0" />
+        <mass
+          value="0.310870163680587" />
+        <inertia
+          ixx="0.00151759136383852"
+          ixy="6.37716454397139E-05"
+          ixz="-1.8272961729172E-10"
+          iyy="0.0010979771692028"
+          iyz="-3.73632661974745E-10"
+          izz="0.00261510222779554" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/DaFuYang.stl" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="1 1 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/DaFuYang.stl" />
+        </geometry>
+      </collision>
+    </link>
+    
+    <link
+      name="transport">
+      <inertial>
+        <origin
+          xyz="0.0129054196400893 -8.89566198480907E-13 3.17639387015234E-11"
+          rpy="0 0 0" />
+        <mass
+          value="0.011591047399735" />
+        <inertia
+          ixx="1.68179708134228E-06"
+          ixy="-7.91003982200355E-18"
+          ixz="2.8248028464874E-16"
+          iyy="1.56702768653599E-06"
+          iyz="-3.74265714920301E-22"
+          izz="1.56702768653599E-06" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/transport.stl" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/transport.stl" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link
+      name="Ban">
+      <inertial>
+        <origin
+          xyz="-0.00701447312139941 0.0400485753125789 -1.26812192065007E-05"
+          rpy="0 0 0" />
+        <mass
+          value="0.932673951450965" />
+        <inertia
+          ixx="0.013755126470773"
+          ixy="3.22593349648774E-14"
+          ixz="1.65066833476685E-09"
+          iyy="0.00720533512901618"
+          iyz="-1.40714752717802E-07"
+          izz="0.00662321845538053" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/Ban.stl" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.847058823529412 0.847058823529412 0.847058823529412 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/Ban.stl" />
+        </geometry>
+      </collision>
+    </link>
+    
+    <link
+      name="Shooter-1">
+      <inertial>
+        <origin
+          xyz="0 0.0141811221728134 1.11022302462516E-16"
+          rpy="0 0 0" />
+        <mass
+          value="0.0790845144313606" />
+        <inertia
+          ixx="5.17324245520365E-05"
+          ixy="6.89780266330937E-20"
+          ixz="-3.3881317890172E-21"
+          iyy="8.85538199982014E-05"
+          iyz="1.92379377386871E-19"
+          izz="5.17324245520365E-05" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/Shooter-1.stl" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.0549019607843137 0.823529411764706 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/Shooter-1.stl" />
+        </geometry>
+      </collision>
+    </link>
+    
+    <link
+      name="Shooter-2">
+      <inertial>
+        <origin
+          xyz="0 0.0141811221728136 2.22044604925031E-16"
+          rpy="0 0 0" />
+        <mass
+          value="0.0790845144313607" />
+        <inertia
+          ixx="5.17324245520366E-05"
+          ixy="-2.08268419162557E-20"
+          ixz="-3.3881317890172E-21"
+          iyy="8.85538199982016E-05"
+          iyz="-1.03815738986994E-20"
+          izz="5.17324245520366E-05" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/Shooter-2.stl" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.0549019607843137 0.823529411764706 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://rc_description/meshes/rabbit/Shooter-2.stl" />
+        </geometry>
+      </collision>
+    </link>
+    
+
+    <joint
+      name="Shooter_Base"
+      type="prismatic">
+      <origin
+        xyz="0.08 0 0.01"
+        rpy="0 0 0" />
+      <parent
+        link="base_link" />
+      <child
+        link="Shooter-Base" />
+      <axis
+        xyz="0.99806 0 -0.062327" />
+      <limit
+        lower="0.0"
+        upper="0.2"
+        effort="30"
+        velocity="10" />
+      <dynamics damping="0.01" friction="0.02"/>   
+    </joint>
+
+    <!-- <joint
+      name="Chilun"
+      type="fixed">
+      <origin
+        xyz="0.028545 -0.0083131 0.033286"
+        rpy="3.1007 -0.047119 -2.4266" />
+      <parent
+        link="Shooter-Base" />
+      <child
+        link="Chilun" />
+      <axis
+        xyz="0 0 -1" />
+    </joint> -->
+
+    <joint
+      name="fuyang"
+      type="revolute">
+      <origin
+        xyz="0.16001 -0.054813 0.05263"
+        rpy="1.5708 -0.54345 0" />
+      <parent
+        link="Shooter-Base" />
+      <child
+        link="FuYang" />
+      <axis
+        xyz="0 0 1" />
+      <limit lower="-0.42" upper="0.16" velocity="10" effort="200"/>
+      <dynamics damping="0.01" friction="0.02"/>   
+    </joint>
+
+    <joint
+      name="DaFuYang"
+      type="fixed">
+      <origin
+        xyz="-0.0063452 0.18444 -0.004"
+        rpy="3.1416 0 1.9794" />
+      <parent
+        link="FuYang" />
+      <child
+        link="DaFuYang" />
+      <axis
+        xyz="0 0 0" />
+    </joint>
+
+    <joint
+      name="Ban"
+      type="fixed">
+      <origin
+        xyz="0.052106 -0.036684 0.0425"
+        rpy="3.1416 0 -2.9256" />
+      <parent
+        link="DaFuYang" />
+      <child
+        link="Ban" />
+      <axis
+        xyz="0 0 0" />   
+    </joint>
+
+    <joint
+      name="move"
+      type="revolute">
+      <origin
+        xyz="0.0036633 0.072119 0.029"
+        rpy="0.82998 -1.5708 -2.1848" />
+      <parent
+        link="DaFuYang" />
+      <child
+        link="transport" />
+      <axis
+        xyz="0 0.69781 0.71628" />
+      <limit lower="-1e9" upper="1e9" velocity="10" effort="200"/>
+      <dynamics damping="0.01" friction="0.02"/>   
+    </joint>
+
+    <joint
+      name="Shooter_1"
+      type="revolute">
+      <origin
+        xyz="-0.03875 0.1441 0.141"
+        rpy="0 -0.40717 -1.5708" />
+      <parent
+        link="Ban" />
+      <child
+        link="Shooter-1" />
+      <axis
+        xyz="0 1 0" />
+      <limit lower="-1e9" upper="1e9" velocity="10" effort="200"/>
+      <dynamics damping="0.01" friction="0.02"/>      
+    </joint>
+
+    <joint
+      name="Shooter_2"
+      type="revolute">
+      <origin
+        xyz="-0.03875 0.1441 -0.141"
+        rpy="0 0.40717 -1.5708" />
+      <parent
+        link="Ban" />
+      <child
+        link="Shooter-2" />
+      <axis
+        xyz="0 1 0" />
+      <limit lower="-1e9" upper="1e9" velocity="10" effort="200"/>
+      <dynamics damping="0.01" friction="0.02"/>    
+    </joint>
+</robot>

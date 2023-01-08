@@ -1,7 +1,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:include filename="$(find rm_description)/urdf/common/friction.urdf.xacro"/>
-    <!--    <xacro:include filename="$(find rm_description)/urdf/standard/gimbal.urdf.xacro"/>-->
+    <xacro:include filename="$(find rc_description)/urdf/common/friction.urdf.xacro"/>
+    <!--    <xacro:include filename="$(find rc_description)/urdf/standard/gimbal.urdf.xacro"/>-->
 
 
     <xacro:property name="wheel_offset_x" value="0.047"/>
@@ -28,13 +28,13 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://rm_description/meshes/standard/trigger.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://rc_description/meshes/standard/trigger.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://rm_description/meshes/standard/trigger.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://rc_description/meshes/standard/trigger.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>

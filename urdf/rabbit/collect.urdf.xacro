@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="collect">
+<link
+    name="gan1">
+    <inertial>
+      <origin
+        xyz="0.014999998784627 1.04524555677443E-10 0.0800522229926098"
+        rpy="0 0 0" />
+      <mass
+        value="0.0939318152935132" />
+      <inertia
+        ixx="0.000711899166479065"
+        ixy="-4.03797884904445E-13"
+        ixz="-1.41992064648818E-11"
+        iyy="0.000711897591160339"
+        iyz="-5.55051094130077E-12"
+        izz="1.5667700740647E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rc_description/meshes/rabbit/gan1.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rc_description/meshes/rabbit/gan1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="gan2">
+    <inertial>
+      <origin
+        xyz="-0.286943427532734 -0.00986111213284213 0.143995497431499"
+        rpy="0 0 0" />
+      <mass
+        value="0.348133394548108" />
+      <inertia
+        ixx="0.000778668964567183"
+        ixy="-2.36806598475231E-06"
+        ixz="-6.61354510914919E-08"
+        iyy="0.00208807260594006"
+        iyz="-9.04738242357429E-06"
+        izz="0.00140667937682949" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rc_description/meshes/rabbit/gan2.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rc_description/meshes/rabbit/gan2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gan2"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="gan1" />
+    <child
+      link="gan2" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="lun">
+    <inertial>
+      <origin
+        xyz="0.00988115749196578 -0.203962434643913 -0.225"
+        rpy="0 0 0" />
+      <mass
+        value="0.0795215640439916" />
+      <inertia
+        ixx="0.00134304466523673"
+        ixy="0"
+        ixz="-2.66209566564006E-19"
+        iyy="0.00134304466523673"
+        iyz="1.4109979944297E-18"
+        izz="2.23654398873727E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rc_description/meshes/rabbit/lun.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rc_description/meshes/rabbit/lun.stl" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="gan1"
+    type="fixed">
+    <origin
+      xyz="-0.0386549522373945 -0.398547370756406 -0.239071274713723"
+      rpy="0.517360155548863 1.5707963267949 0" />
+    <parent
+      link="left_tude_1" />
+    <child
+      link="gan1" />
+    <axis
+      xyz="1 0 0" />
+   <!-- <limit lower="${gan1_lower_limit}" upper="${gan1_upper_limit}" velocity="10" effort="200"/>    -->
+  </joint>
+
+  <joint
+    name="lun"
+    type="revolute">
+    <origin
+      xyz="-0.0386549522373945 -0.398547370756407 0.159441043612219"
+      rpy="0 0 2.20702952920736" />
+    <parent
+      link="left_tude_1" />
+    <child
+      link="lun" />
+    <axis
+      xyz="0 0 1" />
+    <!--      limit not work while type="continuous"-->
+    <limit effort="2." velocity="50." lower="-1e9" upper="1e9"/>
+    <dynamics damping="0.01" friction="0.02"/> 
+  </joint>
+</robot>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="shooter">
+
+    <xacro:macro name="shooter_transmission" params="simulation">
+    <!-- transmission -->
+        <transmission name="trans_Shooter_Base">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="Shooter_Base_motor">
+                <mechanicalReduction>480.08</mechanicalReduction>
+            </actuator>
+            <joint name="Shooter_Base">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <offset>0</offset>
+            </joint>
+        </transmission>
+
+        <transmission name="trans_FuYang">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="FuYang_motor">
+                <mechanicalReduction>19.2032</mechanicalReduction>
+            </actuator>
+            <joint name="fuyang">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <offset>0</offset>
+            </joint>
+        </transmission>
+
+        <transmission name="trans_transport">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="transport_motor">
+                <mechanicalReduction>19.2032</mechanicalReduction>
+            </actuator>
+            <joint name="move">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <offset>0</offset>
+            </joint>
+        </transmission>
+
+        <transmission name="trans_Shooter_1">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="Shooter_1_motor">
+                <mechanicalReduction>19.2032</mechanicalReduction>
+            </actuator>
+            <joint name="Shooter_1">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <offset>0</offset>
+            </joint>
+        </transmission>
+
+        <transmission name="trans_Shooter_2">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="Shooter_2_motor">
+                <mechanicalReduction>19.2032</mechanicalReduction>
+            </actuator>
+            <joint name="Shooter_2">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <offset>0</offset>
+            </joint>
+        </transmission>
+    </xacro:macro>    
+    
+</robot>
