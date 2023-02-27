@@ -1,50 +1,50 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:include filename="$(find rc_description)/urdf/common/omni_wheel.urdf.xacro"/>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="chassis">
+    <xacro:include filename="$(find rc_description)/urdf/common/swerve_drive.urdf.xacro"/>
     <xacro:include filename="$(find rc_description)/urdf/common/inertia_utils.urdf.xacro"/>
-
-    <xacro:property name="chassis_radius" value="0.358"/>
-    <xacro:property name="wheel_offset_z" value="-0.04373"/>
+    <xacro:property name="wheel_track" value="0.3"/>
+    <xacro:property name="wheel_base" value="0.3"/>
+    <xacro:property name="wheel_offset_z" value="0.054"/>
 
     <xacro:macro name="chassis" params="roller_type">
-
         <link name="base_link">
             <xacro:cylinder_inertial_matrix m="3.0" r="0.358" h="0.05"/>
+            <inertial>
+                <origin xyz="0.0 0.0 0.0" rpy="0 0 ${-pi/2.0}"/>
+            </inertial>
             <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
                 <geometry>
-                    <cylinder radius="0.03" length="0.05"/>
+                    <mesh filename="package://rc_description/meshes/rabbit/base.stl" scale="1.0 1.0 1.0"/>
                 </geometry>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             </visual>
+
             <collision>
                 <geometry>
                     <cylinder radius="0.18" length="0.05"/>
                 </geometry>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             </collision>
-            <material name="orange">
-                <color rgba="255 108 10 255"/>
-            </material>
         </link>
 
-        <xacro:omni_wheel prefix="front" connected_to="base_link"
-                          wheel_x_offset="0.0" wheel_y_offset="${chassis_radius}"
-                          wheel_z_offset="${wheel_offset_z}" rotation_degree="0.0" roller_type="${roller_type}"
-                          max_effort="5" max_velocity="50"
-        />
-        <xacro:omni_wheel prefix="left" connected_to="base_link"
-                          wheel_x_offset="${-chassis_radius*sqrt(3)/2}" wheel_y_offset="${-chassis_radius/2}"
-                          wheel_z_offset="${wheel_offset_z}" rotation_degree="${2*pi/3}" roller_type="${roller_type}"
-                          max_effort="5" max_velocity="50"
-        />
-        <xacro:omni_wheel prefix="right" connected_to="base_link"
-                          wheel_x_offset="${chassis_radius*sqrt(3)/2}" wheel_y_offset="${-chassis_radius/2}"
-                          wheel_z_offset="${wheel_offset_z}" rotation_degree="${-2*pi/3}" roller_type="${roller_type}"
-                          max_effort="5" max_velocity="50"
-        />
-        <xacro:wheel_transmission prefix="front" mechanical_reduction="19.2032"/>
-        <xacro:wheel_transmission prefix="left" mechanical_reduction="19.2032"/>
-        <xacro:wheel_transmission prefix="right" mechanical_reduction="19.2032"/>
+
+        <xacro:swerve_drive prefix="left_front" connected_to="base_link"
+                            x_offset="${wheel_track/2}" y_offset="${wheel_base/2}"
+                            z_offset="${wheel_offset_z}"/>
+        <xacro:swerve_drive prefix="right_front" connected_to="base_link"
+                            x_offset="${wheel_track/2}" y_offset="${-wheel_base/2}"
+                            z_offset="${wheel_offset_z}"/>
+        <xacro:swerve_drive prefix="left_back" connected_to="base_link"
+                            x_offset="${-wheel_track/2}" y_offset="${wheel_base/2}"
+                            z_offset="${wheel_offset_z}"/>
+        <xacro:swerve_drive prefix="right_back" connected_to="base_link"
+                            x_offset="${-wheel_track/2}" y_offset="${-wheel_base/2}"
+                            z_offset="${wheel_offset_z}"/>
+
+        <xacro:swerve_transmission prefix="left_front" wheel_reduction="-19.2032" pivot_offset="-0.79776"/>
+        <xacro:swerve_transmission prefix="right_front" wheel_reduction="-19.2032" pivot_offset="4.68688"/>
+        <xacro:swerve_transmission prefix="left_back" wheel_reduction="-19.2032" pivot_offset="0.741"/>
+        <xacro:swerve_transmission prefix="right_back" wheel_reduction="-19.2032" pivot_offset="-0.7479"/>
 
     </xacro:macro>
 

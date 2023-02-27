@@ -17,16 +17,10 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <box size="0.015 0.015 0.004"/>
+                    <mesh filename="package://rc_description/meshes/common/action.stl" scale="1.0 1.0 1.0"/>
                 </geometry>
             </visual>
-            <material name="orange">
-                <color rgba="255 108 10 255"/>
-            </material>
         </link>
-        <gazebo reference="${action_name}">
-            <material>Gazebo/Orange</material>
-        </gazebo>
         <gazebo reference="${action_name}_joint">
             <disableFixedJointLumping>true</disableFixedJointLumping>
         </gazebo>
