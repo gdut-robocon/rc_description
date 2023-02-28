@@ -57,4 +57,13 @@
                       rpy="0.0 0.0 0.0"/>
     </xacro:if>
 
+    <xacro:if value="$(arg use_simulation)">
+        <gazebo>
+            <plugin name="rc_ros_control" filename="librc_robot_hw_sim.so">
+                <robotNamespace>/</robotNamespace>
+                <robotSimType>rc_gazebo/rcRobotHWSim</robotSimType>
+            </plugin>
+        </gazebo>
+    </xacro:if>
+
 </robot>
