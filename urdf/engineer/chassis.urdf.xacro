@@ -1,14 +1,13 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="chassis">
 
-    <xacro:include filename="$(find rc_description)/urdf/common/swerve_drive.urdf.xacro"/>
+    <xacro:include filename="$(find rm_description)/urdf/common/swerve_drive.urdf.xacro"/>
     <!-- https://upload.wikimedia.org/wikipedia/commons/5/52/Wheelbase_and_Track.png -->
     <xacro:property name="wheel_track" value="0.423"/>
     <xacro:property name="wheel_base" value="0.412"/>
     <xacro:property name="wheel_offset_z" value="0.06795"/>
 
     <xacro:macro name="chassis">
-        <link name="dummy"> 
-        </link>
+
         <link name="base_link">
             <inertial>
                 <mass value="12.252018"/>
@@ -118,11 +117,6 @@
                 </geometry>
             </collision>
         </link>
-
-        <joint name="dummy_joint" type="fixed">
-            <parent link="dummy"/>
-            <child link="base_link"/>
-        </joint>
 
         <!--        <link name="card">-->
         <!--            <inertial>-->

@@ -4,10 +4,8 @@
     <xacro:arg name="load_chassis" default="true"/>
     <xacro:arg name="load_radar" default="true"/>
     <xacro:arg name="load_action" default="true"/>
-    <xacro:arg name="load_arm" default="true"/>
-    <xacro:arg name="use_sim" default="true"/>
-    <xacro:arg name="use_simulation" default="false"/>
-    
+    <xacro:arg name="load_arm" default="false"/>
+    <xacro:arg name="use_sim" default="false"/>
 
     <xacro:if value="$(arg load_chassis)">
         <xacro:include filename="$(find rc_description)/urdf/engineer/chassis.urdf.xacro"/>
@@ -28,22 +26,22 @@
                       rpy="0.0 0.0 0.0"/>
     </xacro:if>
 
-       <!-- <xacro:if value="$(arg use_sim)">
-           <gazebo>
-                <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-                    <robotNamespace>/</robotNamespace>
-               </plugin>
-           </gazebo>
-       </xacro:if> -->
+    <!--    <xacro:if value="$(arg use_sim)">-->
+    <!--        <gazebo>-->
+    <!--            <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">-->
+    <!--                <robotNamespace>/</robotNamespace>-->
+    <!--            </plugin>-->
+    <!--        </gazebo>-->
+    <!--    </xacro:if>-->
 
-    <!-- <xacro:if value="$(arg use_sim)">
-        <gazebo>
-            <plugin name="rc_ros_control" filename="librm_robot_hw_sim.so">
-                <robotNamespace>/</robotNamespace>
-                <robotSimType>rc_gazebo/RmRobotHWSim</robotSimType>
-            </plugin>
-        </gazebo>
-    </xacro:if> -->
+    <!--    <xacro:if value="$(arg use_sim)">-->
+    <!--        <gazebo>-->
+    <!--            <plugin name="rm_ros_control" filename="librm_robot_hw_sim.so">-->
+    <!--                <robotNamespace>/</robotNamespace>-->
+    <!--                <robotSimType>rm_gazebo/RmRobotHWSim</robotSimType>-->
+    <!--            </plugin>-->
+    <!--        </gazebo>-->
+    <!--    </xacro:if>-->
 
     <xacro:if value="$(arg load_arm)">
         <xacro:include filename="$(find rc_description)/urdf/engineer/arm.urdf.xacro"/>
